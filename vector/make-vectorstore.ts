@@ -5,6 +5,16 @@ import { CharacterTextSplitter } from "langchain/text_splitter";
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { FaissStore } from "@langchain/community/vectorstores/faiss";
 
+/*
+ * This is a demonstration of how to create a vector store from a set of documents.
+ * It uses the OpenAIEmbeddings class to embed the documents and the FaissStore
+ * class to store the embeddings. The documents are loaded from a file using
+ * the TextLoader class and then split into chunks using the
+ * CharacterTextSplitter class. The embeddings are then
+ * created using the OpenAIEmbeddings class and stored
+ * in a FaissStore.
+ */
+
 async function main() {
   const loader = new TextLoader("./knowledge.txt");
 

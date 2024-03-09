@@ -7,6 +7,16 @@ import { RetrievalQAChain, loadQAStuffChain } from "langchain/chains";
 import { DynamicStructuredTool } from "@langchain/core/tools";
 import { z } from "zod";
 
+/*
+ * This is a tool which uses the method established in `/vector/use-vectorstore.ts`
+ * to retrieve information about the restaurant Katsuya Sushi. This is
+ * encapsulated in a DynamicStructuredTool, which is a type of tool that
+ * can be used in the Langchain platform.
+ *
+ * This tool can then be passed to an agent, so that an agent can
+ * use it to retrieve information about the restaurant Katsuya Sushi.
+ */
+
 async function retrieveRestaurantInformation(query: string) {
   const embeddings = new OpenAIEmbeddings({
     openAIApiKey: process.env.OPENAI_API_KEY,

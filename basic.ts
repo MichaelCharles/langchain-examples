@@ -11,6 +11,10 @@ dotenv.config();
  * It is a simple wrapper around the OpenAI class and the PromptTemplate class.
  * It takes a prompt template and a language model (in this case, OpenAI).
  * It will then run the prompt with the given values and return the result.
+ *
+ * I've also included a Timer class to measure the time it takes to generate the result.
+ *
+ * This example uses simple completion prompts as opposed to chat prompts.
  */
 
 const template =

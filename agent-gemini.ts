@@ -1,6 +1,7 @@
 import { ChatOpenAI } from "@langchain/openai";
 import {
   ChatPromptTemplate,
+  HumanMessagePromptTemplate,
   MessagesPlaceholder,
 } from "@langchain/core/prompts";
 import { SerpAPI } from "@langchain/community/tools/serpapi";
@@ -8,6 +9,7 @@ import { Calculator } from "langchain/tools/calculator";
 import * as dotenv from "dotenv";
 import { AgentExecutor, createOpenAIFunctionsAgent } from "langchain/agents";
 import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
+import { SystemMessage } from "@langchain/core/messages";
 dotenv.config();
 
 /* This is an example of using Gemini to create an agent which is able to call
@@ -18,9 +20,9 @@ dotenv.config();
 
 async function main() {
   const prompt = ChatPromptTemplate.fromMessages([
-    ["system", "You are a helpful assistant"],
+    new SystemMessage("You are a helpful assistant"),
     new MessagesPlaceholder("chat_history"),
-    ["human", "{input}"],
+    HumanMessagePromptTemplate.fromTemplate("{input}"),
     new MessagesPlaceholder("agent_scratchpad"),
   ]);
 

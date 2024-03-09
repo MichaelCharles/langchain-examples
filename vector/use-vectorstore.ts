@@ -5,6 +5,14 @@ import { OpenAI, OpenAIEmbeddings } from "@langchain/openai";
 import { FaissStore } from "@langchain/community/vectorstores/faiss";
 import { RetrievalQAChain, loadQAStuffChain } from "langchain/chains";
 
+/*
+ * This is a demonstration of how to use a vector store to retrieve information
+ * from a set of documents. It uses the OpenAIEmbeddings class to embed the
+ * a query and the FaissStore class to retrieve the most similar documents.
+ * The chain will then use the OpenAI class to answer the question using the
+ * most similar documents.
+ */
+
 async function main() {
   const embeddings = new OpenAIEmbeddings({
     openAIApiKey: process.env.OPENAI_API_KEY,

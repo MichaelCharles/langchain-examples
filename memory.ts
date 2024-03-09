@@ -4,6 +4,12 @@ import * as dotenv from "dotenv";
 import { ConversationChain } from "langchain/chains";
 dotenv.config();
 
+/*
+ * This is a demonstration of how to use the ConversationChain in
+ * combination with BufferMemory to create a chain which automatically
+ * remembers the history of a conversation.
+ */
+
 async function main() {
   const model = new OpenAI({
     openAIApiKey: process.env.OPENAI_API_KEY,

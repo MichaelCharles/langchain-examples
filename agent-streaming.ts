@@ -1,19 +1,21 @@
 import { ChatOpenAI } from "@langchain/openai";
 import {
   ChatPromptTemplate,
+  HumanMessagePromptTemplate,
   MessagesPlaceholder,
 } from "@langchain/core/prompts";
 import { SerpAPI } from "@langchain/community/tools/serpapi";
 import { Calculator } from "langchain/tools/calculator";
 import * as dotenv from "dotenv";
 import { AgentExecutor, createOpenAIFunctionsAgent } from "langchain/agents";
+import { SystemMessage } from "@langchain/core/messages";
 dotenv.config();
 
 async function main() {
   const prompt = ChatPromptTemplate.fromMessages([
-    ["system", "You are a helpful assistant"],
+    new SystemMessage("You are a helpful assistant"),
     new MessagesPlaceholder("chat_history"),
-    ["human", "{input}"],
+    HumanMessagePromptTemplate.fromTemplate("{input}"),
     new MessagesPlaceholder("agent_scratchpad"),
   ]);
 
