@@ -1,0 +1,25 @@
+{
+  "name": "langchain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.2"
+  },
+  "dependencies": {
+    "@langchain/community": "^0.0.35",
+    "@langchain/core": "^0.1.43",
+    "@langchain/google-genai": "^0.0.10",
+    "@langchain/openai": "^0.0.18",
+    "dotenv": "^16.4.5",
+    "langchain": "^0.1.25",
+    "serpapi": "^2.0.0"
+  }
+}
