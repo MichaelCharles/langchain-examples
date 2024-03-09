@@ -3,17 +3,15 @@ import {
   ChatPromptTemplate,
   MessagesPlaceholder,
 } from "@langchain/core/prompts";
-import { SerpAPI } from "@langchain/community/tools/serpapi";
 import { Calculator } from "langchain/tools/calculator";
 import * as dotenv from "dotenv";
 import { AgentExecutor, createOpenAIFunctionsAgent } from "langchain/agents";
+import { DynamicStructuredTool } from "@langchain/core/tools";
+import { z } from "zod";
 dotenv.config();
 
-/* This is a basic example of how to use the AgentExecutor class.
- * It is a simple wrapper around the Agent class and the tools.
- * It takes a prompt template and a language model (in this case, OpenAI).
- * It will then run the prompt with the given values and return the result.
- * It also takes a list of tools to use.
+/* This builds off of the agent-openai.ts example, but instead of using SerpAPI,
+ * we create a custom tool that can determine the length of a string.
  */
 
 async function main() {
@@ -30,13 +28,17 @@ async function main() {
     temperature: 0,
   });
 
-  const tools = [
-    new SerpAPI(process.env.SERP_API_KEY ?? "", {
-      hl: "en",
-      gl: "us",
+  // Create the custom tool for determining the length of a string
+  const stringLengthTool = new DynamicStructuredTool({
+    name: "string-length-tool",
+    description: "gets the length of a received string",
+    schema: z.object({
+      string: z.string().describe("The string to get the length of"),
     }),
-    new Calculator(),
-  ];
+    func: async ({ string }) => `${string.length}`,
+  });
+
+  const tools = [new Calculator(), stringLengthTool];
 
   const agent = await createOpenAIFunctionsAgent({
     llm,
@@ -47,12 +49,11 @@ async function main() {
   const agentExecutor = new AgentExecutor({
     agent,
     tools,
-    // verbose: true,
+    verbose: true,
   });
 
   const result = await agentExecutor.invoke({
-    input:
-      "Get the current temperature in Tokyo, Japan in celsius, then find the square root of that number.",
+    input: 'Get the length of the string "Onomatopoeia" and multiple it by 2.',
     chat_history: [],
   });
 

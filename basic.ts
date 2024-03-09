@@ -2,6 +2,9 @@ import { OpenAI } from "@langchain/openai";
 import { PromptTemplate } from "@langchain/core/prompts";
 import { LLMChain } from "langchain/chains";
 import * as dotenv from "dotenv";
+import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
+import { ChatAnthropic } from "@langchain/anthropic";
+const Timer = require("readable-elapsed-timer");
 dotenv.config();
 
 /* This is a basic example of how to use the LLMChain class.
@@ -11,29 +14,75 @@ dotenv.config();
  */
 
 const template =
-  "Create a product name for a new kind of environmentally friendly {product}?";
+  "Create a product name for a new kind of environmentally friendly {product}? Give only one result with no explanations.";
 const prompt = new PromptTemplate({
   template,
   inputVariables: ["product"],
 });
 
-const llm = new OpenAI({
+const openAIModel = new OpenAI({
   openAIApiKey: process.env.OPENAI_API_KEY,
   temperature: 0.9,
-  modelName: "gpt-3.5-turbo",
+  modelName: "gpt-4-turbo-preview",
 });
 
-const chain = new LLMChain({
-  llm,
-  prompt,
+const googleModel = new ChatGoogleGenerativeAI({
+  apiKey: process.env.GOOGLE_API_KEY,
+  modelName: "gemini-pro",
+  temperature: 0.9,
+});
+
+const anthropicModel = new ChatAnthropic({
+  anthropicApiKey: process.env.ANTHROPIC_API_KEY,
+  modelName: "claude-3-opus-20240229",
+  temperature: 0.9,
 });
 
 async function main() {
-  const result = await chain.call({
-    product: "brand of coffee",
+  console.log(
+    "Generating the name of a new kind of environmentally friendly coffee..."
+  );
+  const googleChain = new LLMChain({
+    llm: googleModel,
+    prompt,
   });
 
-  console.log(result);
+  const openAIChain = new LLMChain({
+    llm: openAIModel,
+    prompt,
+  });
+
+  const anthropicChain = new LLMChain({
+    llm: anthropicModel,
+    prompt,
+  });
+
+  const googleTimer = new Timer();
+  const googleResult = await googleChain.call({
+    product: "brand of coffee",
+  });
+  const googleElapsed = googleTimer.elapsed();
+
+  const openAITimer = new Timer();
+  const openAIResult = await openAIChain.call({
+    product: "brand of coffee",
+  });
+  const openAIElapsed = openAITimer.elapsed();
+
+  const anthropicTimer = new Timer();
+  const anthropicResult = await anthropicChain.call({
+    product: "brand of coffee",
+  });
+  const anthropicElapsed = anthropicTimer.elapsed();
+
+  console.log({
+    googleElapsed,
+    googleResult,
+    openAIElapsed,
+    openAIResult,
+    anthropicElapsed,
+    anthropicResult,
+  });
 }
 
 main().catch(console.error);

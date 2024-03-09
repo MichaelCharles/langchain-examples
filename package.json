@@ -14,12 +14,15 @@
     "typescript": "^5.4.2"
   },
   "dependencies": {
+    "@langchain/anthropic": "^0.1.4",
     "@langchain/community": "^0.0.35",
     "@langchain/core": "^0.1.43",
     "@langchain/google-genai": "^0.0.10",
     "@langchain/openai": "^0.0.18",
     "dotenv": "^16.4.5",
     "langchain": "^0.1.25",
-    "serpapi": "^2.0.0"
+    "readable-elapsed-timer": "^0.3.1",
+    "serpapi": "^2.0.0",
+    "zod": "^3.22.4"
   }
 }
