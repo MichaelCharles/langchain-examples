@@ -1,21 +1,22 @@
 import { ChatOpenAI } from "@langchain/openai";
 import {
   ChatPromptTemplate,
+  HumanMessagePromptTemplate,
   MessagesPlaceholder,
 } from "@langchain/core/prompts";
-import { Calculator } from "langchain/tools/calculator";
 import * as dotenv from "dotenv";
 import { AgentExecutor, createOpenAIFunctionsAgent } from "langchain/agents";
-import { DynamicStructuredTool } from "@langchain/core/tools";
-import { z } from "zod";
 import { restaurantInformationRetrievalTool } from "./retrieval-chain-tool";
+import { SystemMessage } from "@langchain/core/messages";
 dotenv.config();
 
 async function main() {
   const prompt = ChatPromptTemplate.fromMessages([
-    ["system", "You are a helpful assistant"],
+    new SystemMessage(
+      "You are a helpful assistant that provides information about the restaurant Katsuya Sushi."
+    ),
     new MessagesPlaceholder("chat_history"),
-    ["human", "{input}"],
+    HumanMessagePromptTemplate.fromTemplate("{input}"),
     new MessagesPlaceholder("agent_scratchpad"),
   ]);
 
@@ -40,7 +41,7 @@ async function main() {
   });
 
   const result = await agentExecutor.invoke({
-    input: "What is the most popular thing on the menu at Katsuya Sushi?",
+    input: "What are your hours?",
     chat_history: [],
   });
 
