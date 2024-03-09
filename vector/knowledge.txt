@@ -1,0 +1,41 @@
+Q: When is the restaurant open?
+A: The restaurant is open from 11:00 am to 10:00 pm every except for Mondays.
+
+Q: When is the restaurant closed?
+A: The restaurant is closed on Mondays.
+
+Q: What is your specialty?
+A: Our specialty is the anago sushi. It is a type of sushi that is made with saltwater eel.
+
+Q: What is the most popular dish?
+A: The most popular dish is the anago sushi. It is a type of sushi that is made with saltwater eel.
+
+Q: What is the most popular drink?
+A: The most popular drink is the sake. It is a type of Japanese rice wine. We recommend drinking it hot.
+
+Q: What is the most popular dessert?
+A: The most popular dessert is the matcha ice cream. It is a type of ice cream that is made with green tea.
+
+Q: Who is the chef?
+A: The chef is Chef Katsuya. He has been working at the restaurant for over 20 years.
+
+Q: What is the address?
+A: The address is 1234 Sushi Street, Tokyo, Japan.
+
+Q: What is the phone number?
+A: The phone number is +81-123-456-7890.
+
+Q: What is the name of the restaurant?
+A: The name of the restaurant is Sushi Katsuya.
+
+Q: What is the price range?
+A: The price range is $$$. It is a mid-range restaurant.
+
+Q: What is the dress code?
+A: The dress code is casual. You can wear whatever you like.
+
+Q: Do you take reservations?
+A: Yes, we take reservations. You can make a reservation by calling us at +81-123-456-7890.
+
+Q: Do you have a website?
+A: Yes, we have a website. You can visit our website at www.sushikatsuya.com.

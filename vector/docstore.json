@@ -1,0 +1,116 @@
+[
+  [
+    [
+      "00cbaeba-4815-441a-b4c2-4fb94f0f97d6",
+      {
+        "pageContent": "Q: When is the restaurant open?\nA: The restaurant is open from 11:00 am to 10:00 pm every except for Mondays.\n\nQ: When is the restaurant closed?\nA: The restaurant is closed on Mondays.",
+        "metadata": {
+          "source": "./knowledge.txt",
+          "loc": { "lines": { "from": 1, "to": 5 } }
+        }
+      }
+    ],
+    [
+      "8aa6dbba-19f6-4a8b-9280-bead40ac0726",
+      {
+        "pageContent": "Q: What is your specialty?\nA: Our specialty is the anago sushi. It is a type of sushi that is made with saltwater eel.",
+        "metadata": {
+          "source": "./knowledge.txt",
+          "loc": { "lines": { "from": 7, "to": 8 } }
+        }
+      }
+    ],
+    [
+      "56b1529e-e4d1-4fec-bc70-231648cce813",
+      {
+        "pageContent": "Q: What is the most popular dish?\nA: The most popular dish is the anago sushi. It is a type of sushi that is made with saltwater eel.",
+        "metadata": {
+          "source": "./knowledge.txt",
+          "loc": { "lines": { "from": 10, "to": 11 } }
+        }
+      }
+    ],
+    [
+      "c3ef3c70-7b82-4dc6-967d-6abfbb2c6eaa",
+      {
+        "pageContent": "Q: What is the most popular drink?\nA: The most popular drink is the sake. It is a type of Japanese rice wine. We recommend drinking it hot.",
+        "metadata": {
+          "source": "./knowledge.txt",
+          "loc": { "lines": { "from": 13, "to": 14 } }
+        }
+      }
+    ],
+    [
+      "fe4b64d8-44ca-4b74-bc89-d54a2e8799e2",
+      {
+        "pageContent": "Q: What is the most popular dessert?\nA: The most popular dessert is the matcha ice cream. It is a type of ice cream that is made with green tea.",
+        "metadata": {
+          "source": "./knowledge.txt",
+          "loc": { "lines": { "from": 16, "to": 17 } }
+        }
+      }
+    ],
+    [
+      "09d5d365-9410-4563-a07e-88a345f06c78",
+      {
+        "pageContent": "Q: Who is the chef?\nA: The chef is Chef Katsuya. He has been working at the restaurant for over 20 years.\n\nQ: What is the address?\nA: The address is 1234 Sushi Street, Tokyo, Japan.",
+        "metadata": {
+          "source": "./knowledge.txt",
+          "loc": { "lines": { "from": 19, "to": 23 } }
+        }
+      }
+    ],
+    [
+      "33037130-2d16-43de-b295-09c75f500224",
+      {
+        "pageContent": "Q: What is the phone number?\nA: The phone number is +81-123-456-7890.\n\nQ: What is the name of the restaurant?\nA: The name of the restaurant is Sushi Katsuya.",
+        "metadata": {
+          "source": "./knowledge.txt",
+          "loc": { "lines": { "from": 25, "to": 29 } }
+        }
+      }
+    ],
+    [
+      "c656efa6-ceca-4e66-a76a-11448f55596e",
+      {
+        "pageContent": "Q: What is the price range?\nA: The price range is $$$. It is a mid-range restaurant.\n\nQ: What is the dress code?\nA: The dress code is casual. You can wear whatever you like.",
+        "metadata": {
+          "source": "./knowledge.txt",
+          "loc": { "lines": { "from": 31, "to": 35 } }
+        }
+      }
+    ],
+    [
+      "6b80fc88-908b-49ec-8948-972bf775d849",
+      {
+        "pageContent": "Q: Do you take reservations?\nA: Yes, we take reservations. You can make a reservation by calling us at +81-123-456-7890.",
+        "metadata": {
+          "source": "./knowledge.txt",
+          "loc": { "lines": { "from": 37, "to": 38 } }
+        }
+      }
+    ],
+    [
+      "b952b1d3-355e-4d3f-864a-7eb2c8d6f896",
+      {
+        "pageContent": "Q: Do you have a website?\nA: Yes, we have a website. You can visit our website at www.sushikatsuya.com.",
+        "metadata": {
+          "source": "./knowledge.txt",
+          "loc": { "lines": { "from": 40, "to": 41 } }
+        }
+      }
+    ]
+  ],
+  {
+    "0": "00cbaeba-4815-441a-b4c2-4fb94f0f97d6",
+    "1": "8aa6dbba-19f6-4a8b-9280-bead40ac0726",
+    "2": "56b1529e-e4d1-4fec-bc70-231648cce813",
+    "3": "c3ef3c70-7b82-4dc6-967d-6abfbb2c6eaa",
+    "4": "fe4b64d8-44ca-4b74-bc89-d54a2e8799e2",
+    "5": "09d5d365-9410-4563-a07e-88a345f06c78",
+    "6": "33037130-2d16-43de-b295-09c75f500224",
+    "7": "c656efa6-ceca-4e66-a76a-11448f55596e",
+    "8": "6b80fc88-908b-49ec-8948-972bf775d849",
+    "9": "b952b1d3-355e-4d3f-864a-7eb2c8d6f896"
+  }
+]
